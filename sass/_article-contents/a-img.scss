@@ -1,0 +1,61 @@
+img {
+  margin: 1em;
+
+  max-width: 100%;
+  height: auto;
+
+  /* margin-top: 0 for both of these so we can
+     align them with the top of the text that they
+     float next to, rather than being pushed down 1em
+  */
+  
+  &.alignleft {
+    float: left;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  &.alignright {
+    float: right;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  &.aligncenter {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &.alignnone {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+figure {
+  margin: auto;
+  max-width: 100%;
+
+  &.alignleft {
+    float: left;
+    margin-right: 2em;
+  }
+
+  &.alignright {
+    float: right;
+    margin-left: 2em;
+  }
+
+  figcaption {
+    @extend .quotelike;
+    font-size: 0.7em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}

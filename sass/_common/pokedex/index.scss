@@ -1,0 +1,75 @@
+main#dex-index {
+  .welcome-area {
+    margin: auto;
+    margin-bottom: 1em;
+    width: 100%;
+
+    justify-content: center;
+
+    .welcome-carnivine {
+      margin-right: 1em;
+      
+      svg {
+        width: 80px;
+        height: 80px;
+        opacity: 0.4;
+        transform: rotate(-10deg);
+
+        transition: 0.25s;
+        will-change: opacity;
+
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .welcome-bubble {
+      @extend .bubblelike;
+
+      border: 1px solid $mid-grey;
+    }
+  }
+
+  .searchable-area {
+    .search-results {
+      &:not(.hide) {
+        .search-item:nth-child(even) {
+          background-color: $slight-grey;
+        }
+      }
+
+      .search-item {
+        display: flex;
+        align-items: center;
+
+        // we want to pad the .title-blocks vertically instead
+        // so the clickable link area expands with them
+
+        padding: 0 1em;
+
+        &:hover {
+          background-color: var(--highlight) !important;
+          color: $grey;
+          border-radius: 10px;
+
+          .pokemon-type {
+            color: var(--highlight);
+            background: $grey;
+          }
+        }
+
+        .title-block {
+          @extend .stylized;
+          @extend .has-invisible-links;
+
+          margin-left: 0.5em;
+          padding: 1.4em 0;
+
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

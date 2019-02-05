@@ -1,0 +1,176 @@
+// PART 0: GENERIC ELEMENTS
+
+.site-name {
+  display: flex;
+  align-items: center;
+  
+  .site-name-contents {
+    a.site-title {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Comfortaa';
+    }
+  }
+
+  &:not(.dont-multiply-title-size) {
+    a.site-title { font-size: 1.8em }
+  }
+
+  &.two-lines {
+    flex-direction: column;
+    justify-content: center;
+
+    svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  &.has-menu,
+  &.big-logo {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &.very-big-logo {
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &:not(.two-lines) {
+    svg {
+      margin-right: 0.25em;
+    }
+  }
+}
+
+// PART 1: COMPONENTS
+
+.pagination {
+  @extend .has-invisible-links;
+  @extend .slight-mobile-margin;
+
+  display: flex;
+  margin-bottom: 4em;
+
+  div.pagination-area {
+    flex-grow: 1;
+    display: block;
+
+    a.pagination-area-card {
+      font-size: 1.7em;
+
+      @extend .max-content;
+
+      padding: 0.2em 1em;
+
+      &.pagination-area-card-right {
+        float: right;
+      }
+
+      .pagination-title {
+        @extend .hide-on-mobile; 
+        @extend .stylized;
+        
+        line-height: 3em;
+      }
+
+      i.fa {
+        @media screen and (max-width: $mobile-breakpoint) {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
+
+.fancy-block {
+  border: 2px solid var(--highlight);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+
+  padding-bottom: 0.75em;
+
+  .title {
+    @extend .h2;
+    @extend .stylized;
+
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    color: $grey !important;
+    background-color: var(--highlight);
+    padding: 0.33em 0.5em;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.placeholder-block {
+  height: var(--height, 5em);
+
+  background-color: $slight-grey;
+  border: 2px dashed $mid-grey;
+  padding: 1em;
+  
+  will-change: border-color;
+  transition: 0.25s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    border-color: var(--highlight);
+  }
+}
+
+// SOCIAL MEDIA
+
+@mixin sm-link($fa, $var) {
+  i.fa-#{$fa} {
+    color: $var;
+  }
+} 
+
+ul.has-social-media-menu {
+  span.fontawesome-class {
+    border: 1px solid;
+  }
+
+  @include sm-link('home', $forums);
+  @include sm-link('twitter', $twitter);
+  @include sm-link('facebook', $facebook);
+  @include sm-link('instagram', $instagram);
+  @include sm-link('crosshairs', $showdown);
+  @include sm-link('comments', $discord);
+}
+
+// USER BITS
+
+.user-bit {
+  margin-bottom: 3em;
+  @extend .max-content;
+  max-width: 100%;
+
+  .user-bit-contents {
+    padding-left: 0.5em;
+    max-width: 30em;
+
+    h2, p {
+      margin: 0;
+      margin-top: 0.25em;
+    }
+  }
+}

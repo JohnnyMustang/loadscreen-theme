@@ -1,0 +1,119 @@
+.image-postbit-block {
+  @extend .has-invisible-links;
+
+  margin-bottom: 3em;
+  border-radius: 2em;
+  overflow: hidden;
+
+  box-shadow: 0 0 10px 0 $dark-grey;
+  background-color: $dark-grey;
+
+  &.no-bottom-curve {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .image-postbit {
+    height: 25em;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    .image-postbit-shading {
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        transparent, 
+        mix(transparent, black, 10%)
+      );
+
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        background: linear-gradient(
+          to bottom,
+          transparent, 
+          mix(transparent, black, 30%)
+        );
+      }
+
+      .image-postbit-content {
+        padding: 1em;
+        height: 100%;
+
+        color: $grey;
+
+        display: flex;
+        flex-direction: column;
+
+        .title-wrapper {
+          flex-grow: 1;
+
+          display: flex;
+          align-items: flex-end;
+
+          h2 {
+            text-shadow: 2px 2px 0 $very-dark-grey;
+            margin-bottom: 0;
+          }
+        }
+
+        p {
+          min-height: 30%;
+        }
+      }
+    }
+  }
+}
+
+.list-postbit-block {
+  @extend .has-invisible-links;
+
+  .list-postbit {
+    @extend .flex;
+
+    &:nth-child(odd) {
+      background-color: $slight-grey;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+    }
+
+    width: 100%;
+
+    align-items: center;
+    padding: 1em;
+
+    .list-image {
+      height: 80px;
+      width: 80px;
+      min-width: 80px;
+
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+
+      margin-right: 1em;
+    }
+
+    .list-postbit-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      a.h2 {
+        @extend .stylized;
+        line-height: 1.1em;
+      }
+
+      p {
+        margin: 0;
+        margin-top: 0.25em;
+      }
+    }
+  }
+}

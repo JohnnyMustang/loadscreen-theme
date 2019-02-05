@@ -1,0 +1,143 @@
+/*
+Theme Name: safari-zine
+Author: Dakota Sankey
+Description: A theme for the Safari Zine.
+*/
+
+/* PICK ONE */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+/* utility partials */
+@import '_common/vars';
+@import '_common/util';
+@import '_common/components';
+@import '_common/texts';
+
+/* global styles */
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 19.6px;
+  letter-spacing: 0.05em;
+  position: relative;
+
+  background-color: $very-dark-grey;
+  margin: 0;
+
+  overflow-x: hidden;
+
+  --shape-backgrounds: url("https://www.safarizone.net/uploads/default/original/2X/2/26a03df4d8a3278c22b1acba62817f99e7ebd855.png");
+
+  --header-height: $header-height;
+
+  &.docked {
+    --header-height: $header-small-height;
+  }
+
+  div.container {
+    width: 100%;
+    position: relative;
+    color: $dark-grey;
+    background-color: $grey;
+
+    div.main-container {
+      width: 100%;
+
+      /* account for the header being always fixed */
+      padding-top: var(--header-height);
+      transition: 0.25s;
+
+      main {
+        @extend .slight-mobile-margin;
+
+        max-width: $main-width;
+        margin: auto;
+        padding-top: 1.5em;
+
+        section[id] {
+          @extend .clearfix;
+        }
+      }
+    }
+  }
+}
+
+::-moz-selection {
+  color: white;
+  background: $very-dark-green;
+}
+
+::selection {
+  color: white;
+  background: $very-dark-green;
+}
+
+#wpadminbar { background: $very-dark-grey !important; }
+
+/* component partials */
+@import '_common/buttons';
+@import '_common/header';
+@import '_common/footer';
+@import '_common/postbit';
+@import '_common/banner';
+@import '_common/aside';
+@import '_common/comments';
+@import '_common/searchable-area';
+
+/* page partials */
+@import '_common/index';
+@import '_common/single';
+@import '_common/author';
+@import '_common/page';
+@import '_common/err-404';
+
+/* pokedex partials */
+@import '_common/pokedex/index';
+@import '_common/pokedex/single';
+@import '_common/pokedex/components';
+
+@media screen and (min-width: $mobile-breakpoint) {
+  @import '_desktop/d-util';
+
+  @import '_desktop/d-header';
+  @import '_desktop/d-postbit';
+  @import '_desktop/d-footer';
+
+  @import '_desktop/d-author';
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  @import '_mobile/m-util';
+  @import '_mobile/m-components';
+  @import '_mobile/m-texts';
+
+  @import '_mobile/m-header';
+  @import '_mobile/m-footer';
+  @import '_mobile/m-postbit';
+  @import '_mobile/m-single';
+
+  @import '_mobile/m-author';
+
+  @import '_mobile/pokedex/m-single';
+}
+
+/* if we need more stuff for this make a folder */
+@media screen and (max-width: $width) {
+  .slight-small-computer-margin {
+    margin-left: 1.25em !important;
+    margin-right: 1.25em !important;
+  }
+
+  .slight-small-computer-padding {
+    padding-left: 1.25em !important;
+    padding-right: 1.25em !important;
+  }
+}
+
+.article-contents {
+  @import '_article-contents/a-texts';
+  @import '_article-contents/a-lists';
+  @import '_article-contents/a-img';
+}
