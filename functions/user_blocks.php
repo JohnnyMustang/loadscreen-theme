@@ -3,7 +3,7 @@
     if (!$username) return;
 
     $description = get_userdata($user_id)->user_description;
-   // $avatar = get_wp_user_avatar_src($user_id);
+    $avatar = get_wp_user_avatar_src($user_id);
     $user_href = get_author_posts_url($user_id); 
     $description = format_description($description);
 
