@@ -8,7 +8,7 @@
         <?php
           site_name([
             'href'       => 'https://www.loadscreen.net',
-            'logo'       => 'logo_zone.svg',
+            'logo'       => 'logo_zone.png',
             'name'       => 'Load Screen',
             'target'     => '_blank',
             'menu'       => 'footer-social-media',
