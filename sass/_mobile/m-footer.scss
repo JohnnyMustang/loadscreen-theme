@@ -1,0 +1,22 @@
+footer#footer {
+  #footer-upper {
+    div.site-name {
+      @extend .max-content;
+      margin: auto;
+    }
+
+    ul li.non-essential-link {
+      span.fontawesome-text {
+        display: none;
+      }
+    }
+  }
+
+  #footer-lower {
+    /* on mobile the BACK TO TOP sticker nearly overlaps with the copyright
+       whereas on desktop they're on opposite sides of the screen
+       so we push it down with some padding
+    */
+    padding-top: 3em !important;
+  }
+}

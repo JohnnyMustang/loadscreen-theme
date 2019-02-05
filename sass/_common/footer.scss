@@ -1,0 +1,67 @@
+footer#footer {
+  background-color: $grey;
+  border-top: 1px solid $dark-transparent-grey;
+  padding-top: 3em;
+
+  footer#footer-upper {
+    @extend .max-content;
+    
+    margin: auto;
+    padding-bottom: 1em;
+
+    a.site-title {
+      position: relative;
+
+      &:before {
+        @extend .h4;
+
+        /* i decided it wasn't worth monkey patching the site_name function for
+           this one use case, but this is a bit messy too :/
+        */
+
+        content: ' Brought to you by';
+        position: absolute;
+        top: -1.2em;
+      }
+    }
+  }
+
+  footer#footer-lower {
+    background-color: $very-dark-grey;
+    color: $grey;
+    padding: 1.5em 3em;
+
+    position: relative;
+
+    #back-to-top {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 3em;
+      background-color: $grey;
+      text-align: center;
+
+      border-bottom-left-radius: 0.5em;
+      border-bottom-right-radius: 0.5em;
+
+      cursor: pointer;
+
+      i.fa {
+        color: $dark-grey;
+        font-size: 2em;
+        transition: 0.25s;
+      }
+
+      &:hover i.fa {
+        color: $very-dark-green;
+      }
+    }
+
+    .footer-zine-logo {
+      padding: 0 1.5em;
+    }
+  }
+}

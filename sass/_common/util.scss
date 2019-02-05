@@ -1,0 +1,124 @@
+a {
+  color: $very-dark-green;
+}
+
+.flex {
+  display: flex;
+
+  & > .vertically-centered {
+    align-items: auto;
+    align-self: center;
+  }
+
+  &.one-growing-element {
+    & > * {
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+
+    .grows {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  &.vertically-centered {
+    align-items: center;
+    align-self: auto;
+  }
+
+  &.wraps {
+    flex-wrap: wrap;
+  }
+
+  &.wraps-on-computer {
+    @media screen and (min-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
+  }
+}
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered-block {
+  margin: auto;
+}
+
+.max-content {
+  width: -moz-fit-content;
+  width: max-content;
+}
+
+.page-width {
+  max-width: 1110px;
+  margin: auto;
+}
+
+a.has-invisible-links,
+.has-invisible-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img.avatar {
+  border-radius: 25%;
+
+  &.tiny {
+    height: 2em;
+    width: 2em;
+  }
+
+  &.small {
+    height: 4em;
+    width: 4em;
+  }
+
+  &.standard {
+    height: 5em;
+    width: 5em;
+  }
+
+  &.huge {
+    height: 10em;
+    width: 10em;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.inline-list li {
+  display: inline-block;
+}
+
+img.block-image, a.block-link {
+  display: block;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.quotelike {
+  border-left: 4px solid var(--highlight);
+  padding: 0.1em 1em;
+}
+
+.bubblelike {
+  border: 4px solid var(--highlight);
+  border-radius: 0.5em;
+  padding: 0.5em 0.75em;
+
+  background-color: mix(white, $grey, 50%);
+  font-size: 115%;
+}

@@ -1,0 +1,77 @@
+// used for section headings
+h1, .h1 {
+  font-size: 2em;
+
+  &.line-height { line-height: 2em; }
+}
+
+// used for card titles
+h2, .h2 {
+  display: block;
+  font-size: 1.7em;
+  text-decoration: none;
+  color: inherit;
+
+  &.line-height { line-height: 1.1em; }
+}
+
+// used for card categories and other misc single-word text
+h3, .h3 {
+  font-size: 90%;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  margin-top: 1em;
+  margin-bottom: 0;
+  border-bottom: 1px dashed $grey;
+
+  &.line-height { line-height: 90%; }
+}
+
+h4, .h4 {
+  font-size: 14px;
+}
+
+.stylized {
+  font-family: "Comfortaa";
+}
+
+.formalized {
+  font-family: "Pacifico";
+}
+
+.standard-title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: 'Comfortaa';
+
+  &.huge {
+    font-size: 4em;
+    line-height: 1.2em;
+    margin-top: 0.25em;
+  }
+
+  &.small-margin {
+    margin-top: 0.35em;
+    margin-bottom: 0.5em;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 1.7em;
+    margin: auto;
+    margin-top: 0.65em;
+
+    background-color: var(--highlight);
+
+  }
+}
+
+.large-text {
+  font-size: 17px;
+  line-height: 1.55em;
+}

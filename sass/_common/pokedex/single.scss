@@ -1,0 +1,281 @@
+main#dex section.back-to-dex-index {
+  @extend .max-content;
+
+  margin: auto;
+  margin-top: 0.83em;
+
+  a.index-link {
+    @extend .formalized;
+  }
+
+  i.fa {
+    display: block;
+    margin: 0 0.5em;
+  }
+
+  div.menu-sprite {
+    width: 48px;
+    height: 32px;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+}
+
+main#dex section.dex-entry-content {
+  .standard-title.huge {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+
+    .dexnum {
+      opacity: 0.4;
+      font-size: 0.56em;
+    }
+  }
+
+  .edit-link {
+    @extend .stylized;
+
+    color: var(--highlight);
+    font-size: 1.2em;
+
+    display: block;
+    margin-bottom: 2em;
+  }
+
+  .article-thumbnail-wrapper {
+    margin-bottom: 2em;
+  }
+
+  .article-thumbnail {
+    height: 30em;
+  }
+
+  .needs-article-thumbnail {
+    @extend .placeholder-block;
+
+    &.large {
+      --height: 30em;
+    }
+  }
+
+  .fimg-author {
+    @extend .has-invisible-links;
+    @extend .quotelike;
+    @extend .max-content;
+
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  .altforms-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: auto;
+    margin-bottom: 1em;
+
+    position: relative;
+
+    .altforms-sticker {
+      @extend .stickerlike;
+
+      position: absolute;
+      right: 0;
+    }
+
+    .altform {
+      @extend .stylized;
+
+      margin: 0 1em;
+      text-align: center;
+
+      // wrapper around the icon
+      a.has-invisible-links {
+        @extend .flex;
+
+        align-items: center;
+        height: 100%;
+      }
+
+      .altform-body {
+        margin-left: 0.5em;
+
+        .altform-title {
+          margin-top: 0.25em;
+          margin-bottom: 0.25em;
+        }
+
+        .types-block {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  .dex-entry-wrapper {
+    margin-bottom: 1em;
+
+    .dex-entry-region, .dex-entry-pokemon-category {
+      @extend .max-content;
+      @extend .stylized;
+
+      color: $grey;
+      background-color: var(--highlight);
+      user-select: none;
+
+      padding: 0.5em 0.75em;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+      margin: 0 1em;
+    }
+
+    .dex-entry-content {
+      @extend .bubblelike;
+    }
+  }
+
+  .types-and-stats-block {
+    align-items: center;
+
+    .pokemon-type {
+      padding: 0.5em 0.75em;
+      border-radius: 0.5em;
+    }
+
+    .stats-block {
+      @extend .max-content;
+
+      display: flex;
+
+      .stat {
+        @extend .stylized;
+
+        color: $grey;
+        user-select: none;
+
+        padding: 0.5em 0.75em;
+        border-radius: 0.5em;
+        margin: 0 0.25em;
+      }
+    }
+  }
+
+  .evolutions-and-altforms {
+    margin-top: 2em;
+
+    .evolution-list {
+      flex-wrap: wrap;
+
+      .evolution-family-chain {
+        border-radius: 0.5em;
+        user-select: none;
+        margin-bottom: 0.75em;
+
+        color: $grey;
+        background-color: var(--highlight);
+
+        &:not(:last-of-type) {
+          margin-right: 1em;
+        }
+
+        .evolution {
+          i.fa {
+            margin: 0 0.5em;
+          }
+
+          span.no-relevant-article {
+            @extend .stylized;
+          }
+
+          a.relevant-article {
+            @extend .has-invisible-links;
+            @extend .stylized;
+
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .biography {
+    margin-top: 2em;
+  }
+}
+
+main#dex section.naming {
+  margin: 1em;
+
+  h2 {
+    @extend .stylized;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+main#dex section.battling {
+  margin-top: 5em;
+  
+  .needs-battling-summary {
+    @extend .placeholder-block;
+    @extend .has-invisible-links;
+
+    margin-top: 2em;
+  }
+}
+
+main#dex section.articles-featuring {
+  margin-top: 5em;
+
+  .needs-articles {
+    @extend .placeholder-block;
+    margin-bottom: 2em;
+  }
+}
+
+main#dex section.gallery {
+  margin-top: 5em;
+
+  .gallery-wrapper {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0;
+    -webkit-column-fill: auto;
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 3;
+    column-gap: 0;
+    column-fill: auto;
+
+    .gallery-item {
+      @extend .has-invisible-links;
+
+      padding: 10px;
+      display: block;
+
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+
+      &:hover {
+        background-color: darken($grey, 5%);
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .credit {
+        @extend .quotelike;
+        @extend .stylized;
+
+        margin-top: 0.5em;
+      }
+    }
+  }
+}

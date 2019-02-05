@@ -1,0 +1,111 @@
+/* define all variables here */
+
+// $light-green: #b9bf82;
+// $dark-green: #878b5f;
+// $very-dark-green: darken($dark-green, 15%);
+
+$very-dark-green: #658b5f;
+
+// $grey: #f1f3f2;
+$grey: darken(white, 4%);
+$slight-grey: darken($grey, 2%);
+$mid-grey: darken($grey, 30%);
+$dark-grey: #23282d;
+$very-dark-grey: darken($dark-grey, 7%);
+
+$dark-transparent-grey: rgba(15, 15, 15, 0.1);
+$transparent-grey: lighten($dark-transparent-grey, 30%);
+
+$mobile-breakpoint: 900px;
+$width: 1000px;
+$main-width: 900px;
+$header-border: 2px dashed rgba($grey, 0.05);
+
+$header-height: 9.25em;
+$header-small-height: 8.25em;
+$sidebar-width: 230px;
+
+$forums: #54436f;
+$twitter: #1da1f2;
+$facebook: #597ab9;
+$instagram: #de5656;
+$showdown: #ff6347;
+$discord: #7186d7;
+
+$pokedex-colors: (
+  red: saturate(adjust-hue($very-dark-green, -110), 0.3),
+  blue: adjust-hue($very-dark-green, 90),
+  yellow: saturate(adjust-hue($very-dark-green, -60), 0.3),
+  green: $very-dark-green,
+  black: lighten($very-dark-grey, 10%),
+  brown: adjust-hue($very-dark-green, -110),
+  purple: invert($very-dark-green),
+  gray: darken($mid-grey, 10%),
+  white: lighten($mid-grey, 3%),
+  pink: lighten(saturate(adjust-hue($very-dark-green, -130), 0.3), 10%)
+);
+
+body {
+  --highlight: $very-dark-green;
+}
+
+.override-highlight {
+  @each $name, $color in $pokedex-colors {
+    &.#{$name} {
+      --highlight: $color;
+    }
+  }
+}
+
+$type-colors: (
+  normal: 'white',
+  fire: 'red',
+  fighting: 'brown',
+  water: 'blue',
+  flying: saturate(adjust-hue($very-dark-green, 90), 0.3),
+  grass: 'green',
+  poison: 'purple',
+  electric: 'yellow',
+  ground: 'brown',
+  psychic: saturate(adjust-hue($very-dark-green, -130), 0.3),
+  rock: adjust-hue($very-dark-green, -120),
+  ice: lighten(adjust-hue($very-dark-green, 90), 20%),
+  bug: adjust-hue($very-dark-green, -50deg),
+  dragon: darken(invert($very-dark-green), 20%),
+  ghost: darken(invert($very-dark-green), 10%),
+  dark: 'black',
+  steel: 'gray',
+  fairy: 'pink'
+);
+
+@each $type, $color in $type-colors {
+  .type-#{$type} {
+    @if type-of($color) == string {
+      --highlight: map-get($pokedex-colors, $color);
+    } @else {
+      --highlight: $color;
+    }
+
+    background-color: var(--highlight);
+  }
+}
+
+$stat-colors: (
+  hp: 'red',
+  atk: saturate(adjust-hue($very-dark-green, -90), 0.35),
+  def: 'yellow',
+  spa: 'green',
+  spd: 'blue',
+  spe: 'purple',
+  bst: darken(invert($very-dark-green), 20%)
+);
+
+@each $stat, $color in $stat-colors {
+  .stat.stat-#{$stat} {
+    @if type-of($color) == string {
+      background-color: map-get($pokedex-colors, $color);
+    } @else {
+      background-color: $color;
+    }
+  }
+}

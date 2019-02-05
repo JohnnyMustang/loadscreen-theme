@@ -1,0 +1,24 @@
+.flex {
+  &.wraps-on-computer {
+    flex-direction: column;
+  }
+
+  &.two-columns-on-computer {
+    & > * {
+      width: 50%;
+    }
+  }
+}
+
+.hide-on-computer {
+  display: none;
+}
+
+.flex-on-desktop {
+  display: flex;
+}
+
+.float-on-computer {
+  &.float-left { float: left; }
+  &.float-right { float: right; }
+}
