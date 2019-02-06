@@ -16,6 +16,20 @@ function scratch_setup() {
 }
 add_action('after_setup_theme', 'scratch_setup');
 
+function loadscreenTheme_widget_init() {
+
+  register_sidebar( array(
+    'name' => 'New Widget Area',
+    'id' => 'new_widget_area',
+    'before_widget' => '<aside>',
+    'after_widget' => '</aside>',
+    'before_title' => '<<h2 class="widget-title"',
+    'after_title'   => '</h2>',
+  ));
+}
+
+add_action('widgets_init', 'loadscreenTheme_widget_init');
+
 function scratch_styles_and_scripts() {
   $dir = get_stylesheet_directory_uri();
   wp_enqueue_style('main-stylesheet', $dir . '/css/style.css');
